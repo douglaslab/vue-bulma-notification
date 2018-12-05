@@ -11,8 +11,7 @@
   <div :class="['notification', 'animated', type ? `is-${type}` : '']" v-if="show">
     <button class="delete touchable" @click="closedByUser()"></button>
     <div class="title is-5" v-if="title">{{ title }}</div>
-    <div v-if="html" v-html="message"></div>
-    <div v-else>{{ message }}</div>
+    {{ message }}
   </div>
 </transition>
 </template>
@@ -37,11 +36,7 @@ export default {
     container: {
       type: String,
       default: '.notifications'
-    },
-    html: {
-      type: Boolean,
-      default: false
-    },
+    }
   },
 
   data () {
